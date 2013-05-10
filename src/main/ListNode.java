@@ -18,13 +18,16 @@ public class ListNode {
 		
 	}
 	
-	public Object findData(int position){//Måste returnera ett object för att kunna vara rekursiv. Då den måste kunna returnera både en int och nästa noden
+	public Object findData(int position){/*Måste returnera ett object för att kunna vara rekursiv. 
+											Då den måste kunna returnera både en int och nästa noden */
 		if (position == 1){
 			return this.data;
-		} else if (position < 1 || nextlink == null){ //On nästa position är null så har vi nått slutet. Om position < 1 så finns inga noder med den positionen
+		} else if (position < 1 || nextlink == null){ /*On nästa position är null så har vi nått slutet.
+		 											Om position < 1 så finns inga noder med den positionen */
+		 											
 			return null;
 		} else {
-			return nextlink.findData(position - 1); // Rekursiv som fortsätter att kalla sig själv sålänge det finns data i listan
+			return nextlink.findData(position - 1);//Rekursiv som fortsätter att kalla sig själv sålänge det finns data i listan
 		}
 		
 	}
