@@ -8,22 +8,22 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	
-		Object [] dataList = {10,5,6,6,"adaw"};//data som sätts in i noderna
-		List list = new List();
-		list.createList(dataList);//skapa listan med noder
+		Object [] dataList = {10,5,6,8,"adaw"};//data som sätts in i noderna
 		
-		ListNode[] listOfNodes = null;
-		listOfNodes = list.getList();//Hämta listan av noder
-		for (int i = 1; i < listOfNodes.length + 1 ; i++){
-			System.out.println("Data " +listOfNodes[0].findData(i));//Hämta data med start från nod 1
-		}
-		listOfNodes[0].insertAfter(50);//Sätt in data efter nod 1 med värde 50
-		System.out.println("Inserted 50 after first node");
-		
-		for (int i = 1; i < listOfNodes.length + 2 ; i++){
-			System.out.println("Data " +listOfNodes[0].findData(i));
-		}
+		ListNode l1 = new ListNode(dataList[0]), l2 = new ListNode(dataList[1]), l3 = new ListNode(dataList[2]);
+		l1.nextlink = l2;
+		l2.nextlink = l3;
+		l3.nextlink = null;
+		l1.printData(l1);
+		l1.insertAfter(50);
+		l1.printData(l1);
 
+		
+		
+			
+		
+		
 	}
-
+	
+	
 }
